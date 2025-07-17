@@ -8,9 +8,11 @@ import { useState } from "react";
 const navLinks = [
   { href: "/dashboard", label: "Dashboard" },
   { href: "/register", label: "Register" },
-  { href: "/course", label: "Course" },
-  { href: "/student", label: "Student" },
-  { href: "/login", label: "Logout" },
+  { href: "/course", label: "Courses" },
+  { href: "/student", label: "Students" },
+  { href: "/enrollment", label: "Enrollment"},
+  { href: "/instructor", label: "Instructor"},
+  { href: "/", label: "Logout" },
 ];
 
 const Sidebar = () => {
@@ -51,7 +53,12 @@ const Sidebar = () => {
               className={`block px-4 py-2 rounded hover:bg-gray-700 transition ${
                 pathname === href ? "bg-gray-800 font-semibold" : ""
               }`}
-              onClick={() => setIsOpen(false)} // Close on mobile link click
+              onClick={() => {
+                setIsOpen(false);
+                if (label === "Logout") {
+                  localStorage.removeItem("isAuthenticated");
+                }
+              }}
             >
               {label}
             </Link>

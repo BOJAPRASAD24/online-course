@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'users',
+    'register',
     'courses',
     'students',
+    'enrollment',
+    'instructor',
     'corsheaders',
 ]
 
@@ -51,6 +54,8 @@ REST_FRAMEWORK = {
     )
 
 }
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -146,3 +151,6 @@ REST_FRAMEWORK = {
 AUTH_USER_MODEL = 'users.CustomUser'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'register.CustomRegister'
+

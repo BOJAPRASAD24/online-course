@@ -2,12 +2,12 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { login, registerUser } from "./services/api"; // Adjust path if needed
+import { login, registerUser } from "./services/api"; 
 
 export default function AuthPage() {
   const router = useRouter();
 
-  const [isLogin, setIsLogin] = useState(true); // Toggle between login/register
+  const [isLogin, setIsLogin] = useState(true); 
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

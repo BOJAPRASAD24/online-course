@@ -6,4 +6,3 @@ class InstructorViewSet(viewsets.ModelViewSet):
     queryset = Instructor.objects.all()
     serializer_class = InstructorSerializer 
 
-# Create your views here.

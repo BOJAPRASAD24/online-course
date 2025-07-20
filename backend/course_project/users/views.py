@@ -12,7 +12,6 @@ class RegisterView(APIView):
     def post(self, request):
         data = request.data
 
-        # Ensure all fields are present
         required_fields = ['username', 'email', 'mobile', 'password']
         for field in required_fields:
             if field not in data:
